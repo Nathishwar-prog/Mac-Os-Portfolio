@@ -24,7 +24,7 @@ When I’m not building, I love listening to music, vibecoding, exploring futuri
     email: "nathishwarc@gmail.com",
     github: "github.com/Nathishwar-prog",
     linkedin: "linkedin.com/in/nathishwar/",
-    website: "knowgrow.tech/",
+    website: "knowgrow.in/",
     phone: "+91 8838746347",
     twitter: "@nathishwarc",
     instagram: "instagram.com/pvt_life_of_nathish",
@@ -119,28 +119,75 @@ When I’m not building, I love listening to music, vibecoding, exploring futuri
 
   workExperience: [
     {
-      role: "AI-Powered Full Stack Engineer Intern",
-      company: "KnowGrow Startup",
-      date: "Jan 2025 - Apr 2025",
-      location: "Remote",
-      description: [
-        "Developed and deployed AI-integrated full-stack web applications using React.js, Node.js, Python, and MongoDB.",
-        "Implemented intelligent automation features leveraging LangChain, OpenAI APIs, and scikit-learn models for personalized learning and recommendation engines.",
-        "Collaborated with data and backend teams to design and scale RESTful APIs and microservice-based architectures.",
-        "Optimized front-end performance and enhanced UX using Next.js, Tailwind CSS, and efficient state management.",
+      role: "AI Full Stack Developer Intern",
+      company: "Tech Innovations Inc.",
+      date: "Jan 2022 – Mar 2024",
+      description: "Led enterprise web & AI features across front-end, back-end, and cloud.",
+      achievements: [
+        "Architected microservices for 100k+ users.",
+        "Built internal RAG documentation search.",
+        "Cut deploy time 60% with CI/CD.",
       ],
+      color: "cyan",
+      status: "completed",
+      t: 0.1,
+      rightSide: false,
     },
     {
-      role: "AI/ML Intern (Virtual)",
-      company: "Google - EduSkills & AICTE Program",
-      date: "Jun 2024 - Aug 2024",
-      location: "Virtual",
-      description: [
-        "Completed a 10-week training focused on Computer Vision, NLP, and Data Science projects.",
-        "Gained hands-on experience with TensorFlow, PyTorch, and OpenCV for model development and deployment.",
-        "Built end-to-end AI solutions, including supervised learning models and deep neural networks.",
-        "Enhanced understanding of ethical AI practices, data handling, and project management workflows.",
+      role: "Frontend Developer Intern",
+      company: "Digital Solutions LLC",
+      date: "Mar 2020 – Dec 2021",
+      description: "React/Vue developer; partnered with Design for pixel-perfect UI.",
+      achievements: [
+        "Shipped 15+ production apps.",
+        "Created a shared design system used by 8 teams.",
       ],
+      color: "blue",
+      status: "completed",
+      t: 0.3,
+      rightSide: true,
+    },
+    {
+      role: "Python Developer Intern",
+      company: "Ascender",
+      date: "Apr 2024 – Jun 2024",
+      description: "APIs, automation & data tooling with Python; delivery speed focus.",
+      achievements: [
+        "Reduced build times by 35% with parallel jobs.",
+        "Shipped internal CLI used by 10+ engineers.",
+      ],
+      color: "emerald",
+      status: "completed",
+      t: 0.5,
+      rightSide: false,
+    },
+    {
+      role: "AI/ML Engineer — Internship",
+      company: "Google",
+      date: "May 2023 – Aug 2023",
+      description: "Prototyped models & eval pipelines; collaborated with research.",
+      achievements: [
+        "Improved inference by 18% via quantization.",
+        "Built dataset-drift visualization tool.",
+      ],
+      color: "amber",
+      status: "completed",
+      t: 0.7,
+      rightSide: true,
+    },
+    {
+      role: "ML Engineer — Internship",
+      company: "Unified Mentor",
+      date: "Sep 2023 – Dec 2023",
+      description: "Training pipelines & MLOps; added accuracy/quality monitoring.",
+      achievements: [
+        "Feature extraction automation; F1 = 0.92.",
+        "Data validation checks integrated in CI.",
+      ],
+      color: "rose",
+      status: "completed",
+      t: 0.9,
+      rightSide: false,
     },
   ],
 
@@ -152,8 +199,34 @@ When I’m not building, I love listening to music, vibecoding, exploring futuri
       name: "Gen AI-Tutor (Ruixen AI)",
       description: "AI-powered tutoring platform for general knowledge and subject-specific topics",
       tech: ["React", "Node.js", "PostgreSQL", "Stripe", "OpenAI API", "Next.js"],
-      live: "https://aitutor.knowgrow.tech",
-      codeLink: "https://future-on-ai.neocities.org/noacesss",
+      live: "https://aitutor.knowgrow.in",
+      codeLink: "https://github.com/Nathishwar-prog/ai-tutor-main",
+      demoPhotos: [
+        "/genAiProject/preview1.png",
+        "/genAiProject/preview2.png",
+        "/genAiProject/preview3.png",
+        "/genAiProject/preview4.png",
+        "/genAiProject/preview5.png",
+        "/genAiProject/preview6.png",
+        "/genAiProject/preview7.png",
+        "/genAiProject/preview8.png",
+        "/genAiProject/preview9.png",
+        "/genAiProject/preview10.png",
+        "/genAiProject/preview11.png",
+        "/genAiProject/preview12.png",
+        "/genAiProject/preview13.png",
+        "/genAiProject/preview14.png",
+        "/genAiProject/preview15.png",
+        "/genAiProject/preview16.png",
+        "/genAiProject/preview17.png",
+        "/genAiProject/preview18.png",
+        "/genAiProject/preview19.png",
+        "/genAiProject/preview20.png",
+        "/genAiProject/preview21.png",
+        "/genAiProject/preview22.png",
+        "/genAiProject/preview23.png",
+        "/genAiProject/preview24.png",
+      ],
       innovation: [
         "Multi-model AI orchestration delivering adaptive learning",
         "Real-time personalized feedback",
@@ -161,6 +234,7 @@ When I’m not building, I love listening to music, vibecoding, exploring futuri
       ],
       keyFeatures: [
         "Adaptive AI tutoring engine",
+        "Sperate AI model for based on use cases",
         "Natural language understanding for precise query handling",
         "Personalized recommendations based on user behavior",
         "Real-time feedback analysis",
@@ -188,40 +262,237 @@ async function getTutorResponse(topic: string, userQuery: string) {
     },
 
     {
-      title: "Task Management App",
-      subtitle: "Collaborative task management tool",
-      name: "Task Management App",
-      description: "Collaborative task management tool with real-time updates and team coordination features.",
-      tech: ["React", "Firebase", "Tailwind CSS"],
-      live: "https://nathishwar.me",
-      codeLink: "https://github.com/Nathishwar-prog", // Updated to generic github as specific link was placeholder
-      innovation: [
-        "Real-time synchronization using Firestore listeners",
-        "Optimistic UI updates for instant feedback",
-        "Role-based access control for team security",
+      title: "AI-Driven Adaptive Revision Tool",
+      subtitle: "AI-powered revision tool",
+      name: "AI-Driven Adaptive Revision Tool",
+      description: "AI-powered revision tool for general knowledge and subject-specific topics",
+      tech: ["React", "Next.js", "Tailwind CSS", "OpenAI API","Three.js","PostgreSQL","Node.js"],
+      live: "https://revision.knowgrow.in",
+      codeLink: "https://github.com/Nathishwar-prog/revison-tool",
+      demoPhotos: [
+        "/revisionProject/LoginPage.png",
+        "/revisionProject/AddFrom.png",
+        "/revisionProject/DashBoard.png",
+        "/revisionProject/AnalyticsPhoto.png",
+        "/revisionProject/KnowledgeLibrary.png",
+        "/revisionProject/KnowledgeVisual.png",
+        "/revisionProject/RevisionCompletion.png",
+        "/revisionProject/RevisionMode.png",
+        "/revisionProject/VivaVoiceStarter.png",
+        "/revisionProject/VivaVoiceEngine1.png",
+        "/revisionProject/VivaVoiceEngine2.png",
+        "/revisionProject/VivaVoiceEngine3.png",
+        "/revisionProject/VivaVoiceEngine4.png",
       ],
-      keyFeatures: ["Task management", "Real-time updates", "Collaboration", "Status tracking", "Priority tagging"],
+  
+      innovation: [
+        "AI-powered adaptive learning engine",
+        "Multi-modal AI orchestration for personalized learning",
+        "Immersive learning with 3D visualization and AI"
+      ],
+      keyFeatures: ["AI-powered adaptive learning", "3D visualization", "Personalized learning", "Real-time feedback", "Status tracking", "Priority tagging"],
       code: {
         language: "typescript",
-        content: `// Real-time task updates with Firebase
+        content: `// revision-engine.ts
 
-import { collection, onSnapshot, query, where } from 'firebase/firestore';
-import { db } from './firebase-config';
+/**
+ * AI-Driven Revision Intelligence System
+ * -------------------------------------
+ * Features:
+ * - Enhanced SM-2 Algorithm
+ * - Forgetting Score Adjustment
+ * - Confidence Trend Analysis
+ * - Priority Calculation
+ */
 
-export function subscribeToTasks(userId: string, callback: (tasks: Task[]) => void) {
-  const q = query(
-    collection(db, 'tasks'),
-    where('userId', '==', userId)
-  );
+type Confidence = 1 | 2 | 3 | 4 | 5;
 
-  return onSnapshot(q, (snapshot) => {
-    const tasks = snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    })) as Task[];
+interface RevisionRecord {
+  conceptId: string;
 
-    callback(tasks);
-  });
+  // Core spaced repetition fields
+  interval: number;            // days
+  easeFactor: number;          // learning speed factor
+  repetition: number;          // successful repetitions
+
+  // Tracking
+  lastReviewedAt: Date | null;
+  nextReviewAt: Date | null;
+
+  // Intelligence layer
+  confidenceHistory: Confidence[];
+  totalReviews: number;
+  failedReviews: number;
+  forgetScore: number;
+}
+
+/**
+ * MAIN FUNCTION → Update revision after user review
+ */
+export function updateRevision(
+  record: RevisionRecord,
+  confidence: Confidence
+): RevisionRecord {
+  const today = new Date();
+
+  // -----------------------------
+  // 1. Update review statistics
+  // -----------------------------
+  record.totalReviews += 1;
+
+  if (confidence < 3) {
+    record.failedReviews += 1;
+  }
+
+  // Forgetting score = failure ratio
+  record.forgetScore =
+    record.failedReviews / record.totalReviews;
+
+  // Store last 5 confidence values
+  record.confidenceHistory.push(confidence);
+  if (record.confidenceHistory.length > 5) {
+    record.confidenceHistory.shift();
+  }
+
+  // -----------------------------
+  // 2. Update Ease Factor (SM-2)
+  // -----------------------------
+  let EF = record.easeFactor;
+
+  EF =
+    EF +
+    (0.1 -
+      (5 - confidence) *
+        (0.08 + (5 - confidence) * 0.02));
+
+  if (EF < 1.3) EF = 1.3;
+
+  record.easeFactor = EF;
+
+  // -----------------------------
+  // 3. Update Interval
+  // -----------------------------
+  if (confidence < 3) {
+    // User forgot → reset learning
+    record.repetition = 0;
+    record.interval = 1;
+  } else {
+    record.repetition += 1;
+
+    if (record.repetition === 1) {
+      record.interval = 1;
+    } else if (record.repetition === 2) {
+      record.interval = 3;
+    } else {
+      record.interval = Math.round(
+        record.interval * record.easeFactor
+      );
+    }
+  }
+
+  // -----------------------------
+  // 4. Intelligence Adjustment
+  // -----------------------------
+
+  // A. Adjust based on forget score
+  if (record.forgetScore > 0.4) {
+    // User often forgets → reduce interval
+    record.interval = Math.max(
+      1,
+      Math.round(record.interval * 0.7)
+    );
+  }
+
+  // B. Confidence trend detection
+  if (isDecreasingTrend(record.confidenceHistory)) {
+    // Concept becoming weak → reduce interval
+    record.interval = Math.max(
+      1,
+      Math.round(record.interval * 0.8)
+    );
+  }
+
+  // -----------------------------
+  // 5. Set Dates
+  // -----------------------------
+  record.lastReviewedAt = today;
+
+  const next = new Date(today);
+  next.setDate(today.getDate() + record.interval);
+
+  record.nextReviewAt = next;
+
+  return record;
+}
+
+/**
+ * Calculate priority for today's revision list
+ */
+export function calculatePriority(record: RevisionRecord): number {
+  const confidence =
+    record.confidenceHistory[
+      record.confidenceHistory.length - 1
+    ] || 3;
+
+  let priority =
+    (1 / record.interval) * 0.4 + // shorter interval → higher priority
+    (1 - confidence / 5) * 0.3 +  // lower confidence → higher priority
+    record.forgetScore * 0.3;     // more forgetting → higher priority
+
+  // Delay penalty (missed revision)
+  if (record.nextReviewAt) {
+    const today = new Date();
+    const delayDays =
+      (today.getTime() - record.nextReviewAt.getTime()) /
+      (1000 * 60 * 60 * 24);
+
+    if (delayDays > 0) {
+      priority += Math.min(0.2, delayDays * 0.05);
+    }
+  }
+
+  return Number(priority.toFixed(3));
+}
+
+/**
+ * Detect decreasing confidence trend
+ * Example: [5,4,3,2] → true
+ */
+function isDecreasingTrend(history: Confidence[]): boolean {
+  if (history.length < 3) return false;
+
+  let decreasing = true;
+
+  for (let i = 1; i < history.length; i++) {
+    if (history[i] >= history[i - 1]) {
+      decreasing = false;
+      break;
+    }
+  }
+
+  return decreasing;
+}
+
+/**
+ * Get today's revision plan
+ */
+export function getTodayRevisionPlan(
+  records: RevisionRecord[]
+): RevisionRecord[] {
+  const today = new Date();
+
+  return records
+    .filter(
+      (r) =>
+        r.nextReviewAt &&
+        r.nextReviewAt <= today
+    )
+    .map((r) => ({
+      ...r,
+      priority: calculatePriority(r),
+    }))
+    .sort((a: any, b: any) => b.priority - a.priority)
+    .slice(0, 20);
 }`,
       },
       preview: null,
@@ -270,42 +541,70 @@ export async function fetchWeather(city: string): Promise<WeatherData> {
       preview: null,
     },
     {
-      title: "Developer Kit",
-      subtitle: "General components and styles",
-      name: "Developer Kit",
-      description: "General components and styles for development.",
-      tech: ["React", "Firebase", "Tailwind CSS"],
-      live: "https://nathishwar.me",
-      codeLink: "https://github.com/Nathishwar-prog", // Updated to generic github as specific link was placeholder
+      title: "Codex - Collaborative Editor",
+      subtitle: "Real-time multi-user coding platform",
+      name: "Codex",
+      description: "A real-time collaborative coding platform used by developers for instant multi-user sessions, featuring shared cursor tracking and syntax highlighting.",
+      tech: ["Next.js", "WebSockets", "Monaco Editor", "Tailwind CSS"],
+      live: "https://codex.knowgrow.in",
+      codeLink: "https://github.com/Nathishwar-prog/CodexApp",
       innovation: [
-        "General components and styles for development",
-        "General components and styles for development",
-        "General components and styles for development",
+        "Low-latency operational transformation for conflict-free editing",
+        "Real-time visibility of peer cursors and selections",
+        "Automated session management and workspace persistence",
       ],
-      keyFeatures: ["Task management", "Real-time updates", "Collaboration", "Status tracking", "Priority tagging"],
+      keyFeatures: ["Multi-user collaboration", "Shared cursors", "Syntax highlighting", "Live chat", "Session persistence"],
       code: {
         language: "typescript",
-        content: `// Real-time task updates with Firebase
+        content: `// WebSocket synchronization for cursor tracking
+socket.on('cursor-move', ({ userId, position }) => {
+  updateUserCursor(userId, position);
+});
 
-import { collection, onSnapshot, query, where } from 'firebase/firestore';
-import { db } from './firebase-config';
-
-export function subscribeToTasks(userId: string, callback: (tasks: Task[]) => void) {
-  const q = query(
-    collection(db, 'tasks'),
-    where('userId', '==', userId)
-  );
-
-  return onSnapshot(q, (snapshot) => {
-    const tasks = snapshot.docs.map(doc => ({
-      id: doc.id,
-      ...doc.data()
-    })) as Task[];
-
-    callback(tasks);
-  });
-}`,
+export function updateUserCursor(userId: string, position: { line: number, ch: number }) {
+  const cursorElement = document.getElementById(\`cursor-\${userId}\`);
+  if (cursorElement) {
+    cursorElement.style.top = \`\${position.line * 20}px\`;
+    cursorElement.style.left = \`\${position.ch * 8}px\`;
+  }
+}
+  
+// User types code or query in the editor
+onUserInput(input) {
+    // Debounce input to avoid excessive requests
+    if (inputIsCode(input)) {
+        // Send code to AI backend for suggestion
+        suggestions = getSuggestionsFromAI(input);
+        displaySuggestions(suggestions);
+    } else if (inputIsSearchQuery(input)) {
+        // Perform smart search
+        results = searchCodebaseOrDocs(input);
+        displaySearchResults(results);
+    }
+    // Apply real-time utilities (lint, format, highlight)
+    utilities = applyDeveloperUtilities(input);
+    displayUtilitiesFeedback(utilities);
+}`
       },
+      demoPhotos:[
+        "/codexProject/preview1.png",
+        "/codexProject/preview2.png",
+        "/codexProject/preview3.png",
+        "/codexProject/preview4.png",
+        "/codexProject/preview5.png",
+        "/codexProject/preview6.png",
+        "/codexProject/preview7.png",
+        "/codexProject/preview8.png",
+        "/codexProject/preview9.png",
+        "/codexProject/preview10.png",
+        "/codexProject/preview11.png",
+        "/codexProject/preview12.png",
+        "/codexProject/preview13.png",
+        "/codexProject/preview14.png",
+        "/codexProject/preview15.png",
+        "/codexProject/preview16.png",
+        "/codexProject/preview17.png",
+      ],
       preview: null,
     },
   ],

@@ -13,6 +13,7 @@ interface TerminalLine {
 
 interface TerminalProps {
   currentSection: string;
+  isReady?: boolean;
 }
 
 export interface TerminalHandle {
@@ -22,11 +23,11 @@ export interface TerminalHandle {
 const welcomeMessages = config.terminal.welcomeMessages;
 
 const ALL_COMMANDS = [
-  "about", "resume", "projects", "skills", "experience",
+  "about", "projects", "skills", "experience",
   "achievements", "certificates", "contact", "clear", "help", "theme", "toggle"
 ];
 
-export const Terminal = forwardRef<TerminalHandle, TerminalProps>(({ currentSection }, ref) => {
+export const Terminal = forwardRef<TerminalHandle, TerminalProps>(({ currentSection, isReady = true }, ref) => {
   const [lines, setLines] = useState<TerminalLine[]>([]);
   const [input, setInput] = useState("");
   const [history, setHistory] = useState<string[]>([]);
@@ -115,6 +116,7 @@ export const Terminal = forwardRef<TerminalHandle, TerminalProps>(({ currentSect
   // Typing animation effect for welcome messages
   useEffect(() => {
     if (abortRef.current) return;
+    if (!isReady) return;
 
     if (isTyping && typingIndex < welcomeMessages.length) {
       const currentMessage = welcomeMessages[typingIndex];
@@ -160,7 +162,7 @@ export const Terminal = forwardRef<TerminalHandle, TerminalProps>(({ currentSect
       // Add a blank line at the end
       setLines(prev => [...prev, { type: "output", content: "" }]);
     }
-  }, [typingIndex, typingCharIndex, isTyping]);
+  }, [typingIndex, typingCharIndex, isTyping, isReady]);
 
   // Typing animation effect for command responses
   useEffect(() => {

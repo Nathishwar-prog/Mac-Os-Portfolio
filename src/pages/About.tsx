@@ -49,7 +49,7 @@ export const About = () => {
               {/* Image Container */}
               <div className="w-72 h-72 md:w-96 md:h-96 rounded-full overflow-hidden border-4 border-black/50 relative z-10">
                 <img
-                  src="/Perfect_dp_1.jpg"
+                  src="/micProfile.jpeg"
                   alt={portfolioData.about.name}
                   className="w-full h-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-500"
                   onError={(e) => {

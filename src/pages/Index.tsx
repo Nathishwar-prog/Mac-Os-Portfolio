@@ -40,9 +40,8 @@ const Index = () => {
     };
   }, []);
 
-  if (isLoading) {
-    return <LoadingScreen onComplete={() => setIsLoading(false)} />;
-  }
+  // No early return, render both if loading so it overlays
+
 
   const handleSectionChange = (section: string) => {
     setActiveSection(section);
@@ -96,6 +95,7 @@ const Index = () => {
               <Terminal
                 ref={terminalRef}
                 currentSection={activeSection}
+                isReady={!isLoading}
               />
             </div>
 
@@ -126,24 +126,27 @@ const Index = () => {
   };
 
   return (
-    <div className="flex flex-col md:flex-row h-screen w-full bg-background bg-black overflow-hidden">
-      {/* Dock Sidebar - Hidden on mobile, or bottom? For now, sidebar on tablet+ */}
-      <div className="hidden md:block w-20 lg:w-24 bg-gradient-to-b from-[#0d1a2b] via-[#1f2d3d] to-[#3c4b57] border-r border-border/50 shrink-0 relative z-50">
-        <Dock activeSection={activeSection} onSectionChange={handleSectionChange} />
-      </div>
+    <>
+      {isLoading && <LoadingScreen onComplete={() => setIsLoading(false)} />}
+      <div className="flex flex-col md:flex-row h-screen w-full bg-background bg-black overflow-hidden">
+        {/* Dock Sidebar - Hidden on mobile, or bottom? For now, sidebar on tablet+ */}
+        <div className="hidden md:block w-20 lg:w-24 bg-gradient-to-b from-[#0d1a2b] via-[#1f2d3d] to-[#3c4b57] border-r border-border/50 shrink-0 relative z-50">
+          <Dock activeSection={activeSection} onSectionChange={handleSectionChange} />
+        </div>
 
-      {/* Main Content Area */}
-      <div className="flex-1 overflow-hidden relative">
-        {renderActiveSection()}
+        {/* Main Content Area */}
+        <div className="flex-1 overflow-hidden relative">
+          {renderActiveSection()}
 
-        {/* Mobile Dock (Bottom Bar) */}
-        <div className="md:hidden absolute bottom-4 left-0 right-0 flex justify-center z-50 pointer-events-none">
-          <div className="bg-black/20 backdrop-blur-md rounded-2xl pointer-events-auto">
-            <Dock activeSection={activeSection} onSectionChange={handleSectionChange} isMobile={true} />
+          {/* Mobile Dock (Bottom Bar) */}
+          <div className="md:hidden absolute bottom-4 left-0 right-0 flex justify-center z-50 pointer-events-none">
+            <div className="bg-black/20 backdrop-blur-md rounded-2xl pointer-events-auto">
+              <Dock activeSection={activeSection} onSectionChange={handleSectionChange} isMobile={true} />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -10,119 +10,142 @@ import {
   Lightbulb,
   FileText,
   Award,
-  Zap
+  Zap,
+  ArrowUpRight
 } from "lucide-react";
 
 // Helper to map string icon names to Lucide components
 const getIcon = (name: string) => {
   switch (name) {
-    case "Star": return <Star className="w-8 h-8 text-cyan-400" />;
-    case "Trophy": return <Trophy className="w-8 h-8 text-yellow-400" />;
-    case "GitPullRequest": return <GitPullRequest className="w-8 h-8 text-green-400" />;
-    case "Mic": return <Mic className="w-8 h-8 text-pink-400" />;
-    case "Users": return <Users className="w-8 h-8 text-blue-400" />;
-    case "Lightbulb": return <Lightbulb className="w-8 h-8 text-purple-400" />;
-    default: return <Award className="w-8 h-8 text-cyan-400" />;
+    case "Star": return <Star className="w-5 h-5 text-cyan-400" />;
+    case "Trophy": return <Trophy className="w-5 h-5 text-yellow-400" />;
+    case "GitPullRequest": return <GitPullRequest className="w-5 h-5 text-green-400" />;
+    case "Mic": return <Mic className="w-5 h-5 text-pink-400" />;
+    case "Users": return <Users className="w-5 h-5 text-blue-400" />;
+    case "Lightbulb": return <Lightbulb className="w-5 h-5 text-purple-400" />;
+    default: return <Award className="w-5 h-5 text-cyan-400" />;
   }
 };
 
 export default function Achievements() {
   return (
-    <div className="relative h-full min-h-screen overflow-y-auto overflow-x-hidden p-6 md:p-12 bg-[#050507] text-white font-inter">
-
+    <div className="relative h-full overflow-y-auto px-4 py-20 md:px-12 bg-black text-white font-inter">
+      
       {/* Background Ambience */}
       <div className="fixed inset-0 pointer-events-none">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-[100px] animate-pulse" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-[100px] animate-pulse delay-1000" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/5 rounded-full blur-[120px]" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/5 rounded-full blur-[120px]" />
       </div>
 
-      <div className="relative max-w-6xl mx-auto z-10">
+      <div className="relative max-w-7xl mx-auto z-10 space-y-24">
 
-        {/* Header */}
-        <div className="text-center mb-16 space-y-4">
-          <div className="inline-block px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-sm font-mono mb-4">
-            SYSTEM.ACHIEVEMENTS_LOG
+        {/* Hero Header */}
+        <header className="space-y-6 text-center max-w-3xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-[10px] font-bold tracking-[0.2em] font-mono text-cyan-400 uppercase">
+             System.Achievements_Archive
           </div>
-          <h1 className="text-5xl md:text-6xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-100 to-cyan-400">
+          <h1 className="text-6xl md:text-7xl font-black tracking-tight bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent">
             Recognition & Impact
           </h1>
-          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
-            A chronicle of milestones, contributions, and breakthroughs in the digital frontier.
+          <p className="text-white/40 text-lg md:text-xl font-medium leading-relaxed">
+            A chronicle of technical breakthroughs, community contributions, and platform milestones.
           </p>
-        </div>
+        </header>
 
-        {/* 3D Sphere - Centered */}
-        <div className="mb-20 flex justify-center scale-90 md:scale-100">
-          <div className="relative">
-            <div className="absolute inset-0 bg-cyan-500/20 blur-[50px] rounded-full" />
+        {/* Central Visualization */}
+        <div className="flex justify-center py-12 relative">
+          <div className="absolute inset-0 bg-cyan-500/10 blur-[100px] rounded-full scale-50" />
+          <div className="relative hover:scale-105 transition-transform duration-700 cursor-grab active:cursor-grabbing">
             <Achive />
           </div>
         </div>
 
-        {/* Achievements Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-          {portfolioData.achievements.map((item, idx) => (
-            <div
-              key={idx}
-              className="group relative p-6 rounded-2xl bg-[#0D1A2B]/40 backdrop-blur-md border border-white/5 hover:border-cyan-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(8,145,178,0.1)]"
-            >
-              {/* Card Glow */}
-              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-cyan-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        {/* Main Achievements Grid */}
+        <section className="space-y-12">
+          <div className="flex items-center gap-4">
+             <div className="h-px flex-1 bg-white/10" />
+             <h2 className="text-xs font-bold tracking-[0.3em] text-white/30 uppercase">Primary Milestones</h2>
+             <div className="h-px flex-1 bg-white/10" />
+          </div>
 
-              <div className="relative flex items-start gap-4">
-                <div className="p-3 rounded-xl bg-white/5 border border-white/10 group-hover:scale-110 transition-transform duration-300">
-                  {getIcon(item.icon)}
-                </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">{item.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-3">
-                    {item.description}
-                  </p>
-                  <div className="inline-flex items-center gap-2 px-2 py-1 rounded-md bg-white/5 border border-white/5 text-xs font-mono text-cyan-300">
-                    <Zap className="w-3 h-3" />
-                    {item.date}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {portfolioData.achievements.map((item, idx) => (
+              <div
+                key={idx}
+                className="group relative p-8 rounded-[2rem] bg-white/[0.02] border border-white/5 hover:border-white/10 transition-all duration-500 hover:bg-white/[0.04]"
+              >
+                <div className="space-y-6">
+                  <div className="flex items-center justify-between">
+                    <div className="p-4 rounded-2xl bg-white/5 border border-white/10 group-hover:scale-110 transition-transform duration-500">
+                      {getIcon(item.icon)}
+                    </div>
+                    <span className="text-[10px] font-bold font-mono text-white/20">{item.date}</span>
+                  </div>
+                  
+                  <div className="space-y-2">
+                    <h3 className="text-xl font-bold group-hover:text-cyan-400 transition-colors">
+                      {item.title}
+                    </h3>
+                    <p className="text-white/40 text-sm leading-relaxed line-clamp-3">
+                      {item.description}
+                    </p>
+                  </div>
+
+                  <div className="pt-4 flex items-center justify-between border-t border-white/5">
+                     <span className="text-[10px] font-bold text-white/40 uppercase tracking-widest">Verified</span>
+                     <Zap className="w-3.5 h-3.5 text-yellow-500/40" />
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        </section>
 
-        {/* Publications Section */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-bold mb-8 flex items-center gap-3">
-            <FileText className="w-8 h-8 text-purple-400" />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-purple-400">
-              Research & Patents
-            </span>
-          </h2>
+        {/* Research & Publications */}
+        <section className="space-y-12 pt-12">
+          <div className="flex items-center gap-4">
+             <div className="h-px flex-1 bg-white/10" />
+             <h2 className="text-xs font-bold tracking-[0.3em] text-purple-400/40 uppercase">Research & Publications</h2>
+             <div className="h-px flex-1 bg-white/10" />
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {portfolioData.publications.map((pub, idx) => (
               <div
                 key={idx}
-                className="relative p-6 rounded-xl bg-gradient-to-br from-[#1a1b26] to-[#0f1016] border border-white/5 hover:border-purple-500/30 transition-all group"
+                className="group relative p-8 rounded-[2rem] bg-gradient-to-br from-white/[0.03] to-transparent border border-white/5 hover:border-purple-500/30 transition-all duration-500"
               >
-                <div className="absolute top-0 right-0 p-4 opacity-50 font-mono text-xs text-slate-500 group-hover:text-purple-400 transition-colors">
-                  REF_0{idx + 1}
+                <div className="space-y-6">
+                  <div className="flex items-start justify-between">
+                    <div className="p-3 rounded-xl bg-purple-500/10 border border-purple-500/20">
+                       <FileText className="w-5 h-5 text-purple-400" />
+                    </div>
+                    <ArrowUpRight className="w-4 h-4 text-white/10 group-hover:text-purple-400 transition-colors" />
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <h3 className="text-lg font-bold group-hover:text-purple-300 transition-colors leading-snug">
+                      {pub.title}
+                    </h3>
+                    <div className="text-xs font-bold text-cyan-400/60 uppercase tracking-wider">
+                      {pub.publication}
+                    </div>
+                    <p className="text-white/40 text-sm leading-relaxed">
+                      {pub.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-lg font-semibold text-purple-200 mb-2 group-hover:text-purple-400 transition-colors">
-                  {pub.title}
-                </h3>
-                <div className="text-sm font-medium text-cyan-400 mb-3 block">
-                  {pub.publication}
-                </div>
-                <p className="text-sm text-slate-400 leading-relaxed">
-                  {pub.description}
-                </p>
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
-        <div className="pb-20 text-center">
-          <p className="text-slate-600 font-mono text-sm">END OF LOG</p>
-        </div>
+        {/* End Footer */}
+        <footer className="py-24 text-center border-t border-white/5">
+          <p className="text-[10px] font-bold font-mono text-white/10 tracking-[1em] uppercase">
+            End of Recognition Log
+          </p>
+        </footer>
 
       </div>
     </div>

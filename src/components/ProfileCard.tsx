@@ -49,9 +49,14 @@ export const ProfileCard = ({
           <div className="flex flex-col items-center text-center relative z-10">
             {/* Profile Image */}
             <div className="w-24 h-24 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center mb-4 border-4 border-white shadow-lg hover:scale-105 transition-transform duration-300">
-              <span className="text-3xl font-bold text-white">
-                {name.split(' ').map(n => n[0]).join('')}
-              </span>
+              <img
+                src="/micProfile.jpeg"
+                alt="Nathishwar"
+                className="w-full h-full rounded-full object-cover object-top filter grayscale group-hover:grayscale-0 transition-all duration-500"
+                onError={(e) => {
+                  (e.target as HTMLImageElement).src = 'https://placehold.co/200x200/1F2D3D/E7ECF4?text=NC';
+                }}
+              />
             </div>
 
             {/* Name and Role */}

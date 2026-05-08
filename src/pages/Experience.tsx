@@ -1,6 +1,5 @@
-
-
 import React, { useEffect, useMemo, useRef, useState } from "react";
+import { portfolioData } from "@/lib/portfolioData";
 
 type ColorKey = "cyan" | "blue" | "violet" | "emerald" | "amber" | "rose";
 type Status = "current" | "resigned" | "completed";
@@ -17,99 +16,8 @@ interface Milestone {
   rightSide?: boolean;
 }
 
-const MILESTONES: Milestone[] = [
-  {
-    role: "AI Full Stack Developer Intern",
-    company: "Tech Innovations Inc.",
-    date: "Jan 2022 – Mar 2024",
-    description:
-      "Led enterprise web & AI features across front-end, back-end, and cloud.",
-    achievements: [
-      "Architected microservices for 100k+ users.",
-      "Built internal RAG documentation search.",
-      "Cut deploy time 60% with CI/CD.",
-    ],
-    color: "cyan",
-    status: "completed",
-    t: 0.08,
-    rightSide: false,
-  },
-  {
-    role: "Frontend Developer Intern",
-    company: "Digital Solutions LLC",
-    date: "Mar 2020 – Dec 2021",
-    description:
-      "React/Vue developer; partnered with Design for pixel-perfect UI.",
-    achievements: [
-      "Shipped 15+ production apps.",
-      "Created a shared design system used by 8 teams.",
-    ],
-    color: "blue",
-    status: "completed",
-    t: 0.32, // shifted position
-    rightSide: true,
-  },
-  {
-    role: "Junior Web Developer Intern",
-    company: "StartUp Ventures",
-    date: "Jun 2018 – Feb 2020",
-    description:
-      "Maintained sites & internal tools; learned full-stack fundamentals.",
-    achievements: [
-      "Built internal CMS for content editors.",
-      "Improved SEO → +50% organic traffic.",
-    ],
-    color: "violet",
-    status: "completed",
-    t: 0.48,
-    rightSide: true,
-  },
-  {
-    role: "Python Developer Intern",
-    company: "Ascender",
-    date: "Apr 2024 – Jun 2024",
-    description:
-      "APIs, automation & data tooling with Python; delivery speed focus.",
-    achievements: [
-      "Reduced build times by 35% with parallel jobs.",
-      "Shipped internal CLI used by 10+ engineers.",
-    ],
-    color: "emerald",
-    status: "completed",
-    t: 0.25,
-    rightSide: true,
-  },
-  {
-    role: "AI/ML Engineer — Internship",
-    company: "Google",
-    date: "May 2023 – Aug 2023",
-    description:
-      "Prototyped models & eval pipelines; collaborated with research.",
-    achievements: [
-      "Improved inference by 18% via quantization.",
-      "Built dataset-drift visualization tool.",
-    ],
-    color: "amber",
-    status: "completed",
-    t: 0.74,
-    rightSide: true,
-  },
-  {
-    role: "ML Engineer — Internship",
-    company: "Unified Mentor",
-    date: "Sep 2023 – Dec 2023",
-    description:
-      "Training pipelines & MLOps; added accuracy/quality monitoring.",
-    achievements: [
-      "Feature extraction automation; F1 = 0.92.",
-      "Data validation checks integrated in CI.",
-    ],
-    color: "rose",
-    status: "completed",
-    t: 0.9,
-    rightSide: false,
-  },
-];
+// Use data from portfolioData
+const MILESTONES = portfolioData.workExperience as unknown as Milestone[];
 
 const TW = {
   cyan: {
@@ -343,28 +251,31 @@ export default function ExperienceTimelinePro() {
                 </div>
 
                 <div
-                  className={`absolute rounded-2xl bg-black/65 border ${tw.border} backdrop-blur-xl p-5 transition-all duration-200 ${hovered === i ? "opacity-100 scale-100 z-50" : "opacity-0 scale-95 z-10 pointer-events-none"}`}
+                  className={`absolute rounded-3xl bg-black/40 backdrop-blur-3xl border border-white/10 shadow-2xl p-6 transition-all duration-500 ${hovered === i ? "opacity-100 scale-100 z-50 translate-y-0" : "opacity-0 scale-95 z-10 pointer-events-none translate-y-4"}`}
                   style={{ left, top, width, height }}
                   onMouseEnter={() => setHovered(i)}
                   onMouseLeave={() => setHovered(null)}>
-                  <div className="flex items-start justify-between gap-3">
-                    <div>
-                      <h3 className="text-lg font-bold leading-tight">{m.role}</h3>
-                      <p className="text-slate-300 text-sm">{m.company}</p>
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="space-y-1">
+                      <h3 className="text-xl font-bold bg-gradient-to-r from-white to-white/60 bg-clip-text text-transparent">{m.role}</h3>
+                      <p className="text-blue-400/80 text-sm font-semibold tracking-wide uppercase">{m.company}</p>
                     </div>
                     <Badge status={m.status} />
                   </div>
 
-                  <p className="text-slate-400 text-sm mt-3 line-clamp-3">{m.description}</p>
+                  <p className="text-white/40 text-sm mt-4 leading-relaxed line-clamp-2 italic italic font-medium">"{m.description}"</p>
 
-                  <ul className="mt-4 space-y-2 pr-1">
-                    {m.achievements.map((a, idx) => (
-                      <li key={idx} className="flex items-start text-sm text-slate-200">
-                        <CheckIcon className="w-4 h-4 mr-2 mt-0.5 text-emerald-400" />
-                        <span className="leading-snug">{a}</span>
-                      </li>
-                    ))}
-                  </ul>
+                  <div className="mt-6 space-y-3">
+                    <h4 className="text-[10px] font-bold text-white/20 uppercase tracking-[0.2em]">Key Contributions</h4>
+                    <ul className="space-y-2.5">
+                      {m.achievements.map((a, idx) => (
+                        <li key={idx} className="flex items-start text-xs text-white/60 group/item">
+                          <CheckIcon className="w-3.5 h-3.5 mr-3 mt-0.5 text-blue-500/50 group-hover/item:text-blue-400 transition-colors" />
+                          <span className="leading-relaxed">{a}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
             );
