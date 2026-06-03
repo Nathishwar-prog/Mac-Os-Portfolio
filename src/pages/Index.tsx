@@ -13,11 +13,15 @@ import Experience from "./Experience";
 import Achievements from "./Achievements";
 import { Certificates } from "./Certificates";
 import { portfolioData } from "@/lib/portfolioData";
+import { SpeakingAvatar, SpeakingAvatarHandle } from "@/components/SpeakingAvatar";
+import { Sparkles } from "lucide-react";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [isLoading, setIsLoading] = useState(true);
   const terminalRef = useRef<TerminalHandle>(null);
+  const avatarRef = useRef<SpeakingAvatarHandle>(null);
+  const [isAvatarOpen, setIsAvatarOpen] = useState(false);
 
   // Load the Easy Peasy chatbot script
   useEffect(() => {
@@ -114,6 +118,20 @@ const Index = () => {
                   website={portfolioData.contact.website}
                   instagram={portfolioData.contact.instagram}
                   email={portfolioData.contact.email}
+                  avatarTrigger={
+                    !isAvatarOpen && (
+                      <button
+                        onClick={() => avatarRef.current?.startTour()}
+                        className="w-10 h-10 rounded-full flex items-center justify-center cursor-pointer transition-all duration-300 transform hover:scale-110 active:scale-95 relative group overflow-hidden shadow-[0_4px_16px_rgba(0,0,0,0.5)] border border-[#0066ff]/20"
+                        title="Start interactive 3D robot tour"
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-tr from-[#0066ff] via-[#7c3aed] to-[#ec4899] orb-spinning-ring opacity-80 group-hover:opacity-100 transition-opacity"></div>
+                        <div className="absolute inset-[2px] bg-[#020617] rounded-full flex items-center justify-center">
+                          <Sparkles className="w-4 h-4 text-[#0066ff] relative z-10 animate-pulse" />
+                        </div>
+                      </button>
+                    )
+                  }
                 />
               </div>
               <div className="flex-1 min-h-0">
@@ -137,6 +155,16 @@ const Index = () => {
         {/* Main Content Area */}
         <div className="flex-1 overflow-hidden relative">
           {renderActiveSection()}
+
+          {/* Speaking Avatar / Interactive Visual Guide */}
+          <SpeakingAvatar
+            ref={avatarRef}
+            onSectionChange={handleSectionChange}
+            activeSection={activeSection}
+            isLoading={isLoading}
+            hideTrigger={true}
+            onOpenChange={setIsAvatarOpen}
+          />
 
           {/* Mobile Dock (Bottom Bar) */}
           <div className="md:hidden absolute bottom-4 left-0 right-0 flex justify-center z-50 pointer-events-none">

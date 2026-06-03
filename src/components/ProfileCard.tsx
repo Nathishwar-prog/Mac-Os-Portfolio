@@ -16,6 +16,7 @@ interface ProfileCardProps {
   website: string;
   instagram: string;
   email: string;
+  avatarTrigger?: React.ReactNode;
 }
 
 export const ProfileCard = ({
@@ -29,7 +30,8 @@ export const ProfileCard = ({
   twitter,
   website,
   instagram,
-  email
+  email,
+  avatarTrigger
 }: ProfileCardProps) => {
   const [showGitHubActivity, setShowGitHubActivity] = useState(false);
 
@@ -43,6 +45,12 @@ export const ProfileCard = ({
     <>
       <div className="h-full flex flex-col bg-gradient-to-br from-[#0D1A2B] via-[#1F2D3D] to-[#3C4B57] border border-white/10 backdrop-blur-xl rounded-2xl shadow-xl shadow-black/40 overflow-hidden hover:shadow-2xl hover:shadow-cyan-500/20 transition-all duration-300 group">
         <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-6 relative overflow-hidden">
+          {/* Avatar Trigger button slot */}
+          {avatarTrigger && (
+            <div className="absolute top-4 right-4 z-20">
+              {avatarTrigger}
+            </div>
+          )}
           {/* Decorative sheen */}
           <div className="absolute top-0 -left-full w-full h-full bg-gradient-to-r from-transparent via-white/5 to-transparent rotate-45 group-hover:translate-x-[200%] transition-transform duration-1000 ease-in-out pointer-events-none"></div>
 
